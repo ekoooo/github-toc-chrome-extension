@@ -32,7 +32,7 @@
 
 .markdown-toc-content li {
     margin-left: 20px;
-    list-style: none;
+    /*list-style: none;*/
 }
 
 .markdown-toc-content >ul >li {
