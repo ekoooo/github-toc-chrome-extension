@@ -4,7 +4,7 @@
      * @param toc
      * @returns {string}
      */
-    function getTocHtml(toc) {
+    function getTocHtml(toc, isClose) {
         let text,
             aHtml,
             nextToc,
@@ -36,11 +36,11 @@
     
         out += repeatStr('</li></ul>', currentDepth);
         
-        return  '<div class="markdown-toc-box">' +
+        return  '<div class="markdown-toc-box ' + (isClose ? '' : 'open') + '">' +
                     '<div class="markdown-toc-content">' +
                         '<h2>Table of Contents</h2>' + out +
                     '</div>' +
-                    '<a class="markdown-toc-toggle open" href="javascript:void(0)"></a>' +
+                    '<span class="markdown-toc-toggle"></span>' +
                 '</div>';
     }
     
@@ -64,35 +64,19 @@
         
         // 插入页面中
         if(toc.length) {
-            $('body').append(getTocHtml(toc));
+            $('body').append(getTocHtml(toc, localStorage.getItem('markdown-toc-close') === '1'));
         }
         
         // 关闭打开事件
         $('.markdown-toc-toggle').on('click', function () {
             let box = $('.markdown-toc-box');
             let toggle = $('.markdown-toc-toggle');
+    
+            box.toggleClass('open');
             
-            if(toggle.hasClass('open')) {
-                box.css({
-                    right: -(box.innerWidth() + 2)
-                });
-    
-                toggle.css({
-                    left:  -(toggle.innerWidth() + 2),
-                    transform: 'scaleX(-1)'
-                });
-            }else {
-                box.css({
-                    right: 0
-                });
-                
-                toggle.css({
-                    left: 0,
-                    transform: 'scaleX(1)'
-                });
-            }
-    
-            toggle.toggleClass('open');
+            box.hasClass('open') ?
+                localStorage.setItem('markdown-toc-close', '0') :
+                localStorage.setItem('markdown-toc-close', '1');
         });
     };
 })(jQuery);

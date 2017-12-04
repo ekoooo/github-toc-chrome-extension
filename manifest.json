@@ -15,7 +15,7 @@
         "default_popup": "pop.html"
     },
     "content_scripts": [{
-        "matches": ["*://*/*"],
+        "matches": ["*://*.github.com/*"],
         "js": [
             "js/jquery-1.8.0.min.js", 
             "js/toc.js"
