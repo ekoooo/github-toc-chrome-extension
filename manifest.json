@@ -1,0 +1,25 @@
+{
+    "name": "github toc",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "markdown toc for github document",
+    "homepage_url": "http://www.lwl.tech",
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": "img/icon19.png",
+        "default_title": "github toc",
+        "default_popup": "pop.html"
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "js": [
+            "js/jquery-1.8.0.min.js", 
+            "js/toc.js"
+        ],
+        "css": ["css/toc.css"]
+    }]
+}
