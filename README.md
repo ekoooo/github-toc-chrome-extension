@@ -11,3 +11,4 @@
 
 ## screenshots
 ![image](https://raw.githubusercontent.com/ekoooo/github-toc-chrome-extension/master/screenshots/1.jpg)
+![image](https://raw.githubusercontent.com/ekoooo/github-toc-chrome-extension/master/screenshots/2.gif)
