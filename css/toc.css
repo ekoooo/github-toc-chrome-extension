@@ -1,5 +1,4 @@
 .markdown-toc-box {
-    box-sizing: border-box;
     position: fixed;
     right: -300px;
     height: 60%;
@@ -26,6 +25,10 @@
     line-height: 34px;
 }
 
+.markdown-toc-book-ico {
+    vertical-align: text-bottom;
+}
+
 .markdown-toc-content {
     background-color: #fff;
     position: absolute;
@@ -35,6 +38,11 @@
     bottom: 0;
     right: 0;
     overflow-y: auto;
+}
+
+.markdown-toc-content ul {
+    margin: 0;
+    padding: 0;
 }
 
 .markdown-toc-content >ul {
@@ -50,6 +58,9 @@
     color: #005cc5;
     font-weight: 500;
     position: relative;
+}
+.markdown-toc-content li a:hover {
+    text-decoration: underline;
 }
 .markdown-toc-content li a::after {
     content: '';
