@@ -7,7 +7,7 @@
 3. Click the `Load unpacked extension` button and select project `github-toc-chrome-extension` folder for your extension to install it.
 
 ## introduce
-> The man is lazy without leaving anyting.
+> The man is lazy without leaving anything.
 
 ## screenshots
 ![image](https://raw.githubusercontent.com/ekoooo/github-toc-chrome-extension/master/screenshots/1.jpg)
